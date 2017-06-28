@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import PureMixinRender from 'react-addons-pure-render-mixin';
-import styles from './styles.less';
+import  './styles.less';
 
 
 class LoadMore extends Component{
@@ -10,10 +10,11 @@ class LoadMore extends Component{
     this.shouldComponentUpdate = PureMixinRender.shouldComponentUpdate;
   }
   handleClick(){
-    this.props.loadMoreFunc();
+    this.props.loadMoreFn();
   }
 
   componentDidMount() {
+    const loadMoreFn =this.props.loadMoreFn
     let timeID;
     let wrapper = this.refs.wrapper;
     let callback = () => {
@@ -45,7 +46,7 @@ class LoadMore extends Component{
 
   render(){
     return (
-      <div className={styles.loadMore} ref="wrapper">
+      <div className="loadMore" ref="wrapper">
       {
         this.props.loadding
         ? <div>加载中...</div>

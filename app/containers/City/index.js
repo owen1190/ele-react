@@ -3,14 +3,17 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux';
 import {updateUserInfo} from '../../actions/userInfo.action';
 import Header from '../../components/Header';
-import CurrentCity from '../../components/CurrentCity';
-import CityList from '../../components/CityList';
+
+import {cityData} from '../../../mock/getData'
 import localStore from '../../until/localStore';
 import {CITYNAME} from '../../config/localSotre.config';
 class City extends Component{
   constructor(props, context){
     super(props, context);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate;
+    this.state={
+      datalist:[]
+    }
   }
   handleBack(){
     this.props.history.goBack();
@@ -19,12 +22,31 @@ class City extends Component{
     localStore.setItem(CITYNAME, cityName);
     this.props.updateCityName(cityName);
   }
+  handleSubmit(e){
+    // e.preventDefault();
+    cityData().then(res=>{
+      console.log(res)
+      this.setState({
+        datalist:res
+      })
+    })
+
+    
+  }
   render(){
     return (
       <div>
-        <Header title='请选择城市' handleBack={this.handleBack.bind(this)}/>
-        <CurrentCity cityName={this.props.cityName}/>
-        <CityList onClick={this.cityListClick.bind(this)}/>
+        <Header title='选择地址' handleBack={this.handleBack.bind(this)} handleSubmit={this.handleSubmit.bind(this)}/>
+        <div className='container'>       
+        <ul className="clear-fix" onClick={this.cityListClick.bind(this)}>
+          {this.state.datalist.map((data,index)=>{
+            <li index={index}>
+              <h4 className="title">{data.name}</h4>
+              <span className="subTitle">{data.address}</span>
+            </li>
+          })}
+        </ul>
+      </div>
       </div>
     );
   }

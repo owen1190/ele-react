@@ -7,11 +7,14 @@ import {
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import Home from '../containers/Home';
-import User from '../containers/User';
+import posMsite from '../containers/Msite';
 import Search from '../containers/Search';
-import Detail from '../containers/Detail';
+import Food from '../containers/Food';
 import City from '../containers/City';
 import NotFound from '../containers/404Page';
+import Login from '../containers/Login';
+import Profile from '../containers/Profile'
+
 
 import localStore from '../until/localStore';
 import {CITYNAME} from '../config/localSotre.config';
@@ -46,10 +49,12 @@ class App extends Component{
     let Routes = (
       <Switch>
         <Route path='/' exact component={Home}/>
-        <Route path='/user'  component={User}/>
-        <Route path='/search'  component={Search}/>
-        <Route path='/detail'  component={Detail}/>
         <Route path='/city'  component={City}/>
+        <Route path='/search/:geoHash'  component={Search}/>
+        <Route path='/food'  component={Food}/>
+        <Route path='/msite'  component={posMsite}/>
+        <Route path='/profile'  component={Profile}/>
+        <Route path='/login'  component={Login}/>        
         <Route component={NotFound}/>
       </Switch>
     );

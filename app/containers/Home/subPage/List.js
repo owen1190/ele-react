@@ -2,10 +2,10 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import {get} from '../../../fetch/get';
-import { ListData }  from '../../../../mock/home/list'
+import { homeListData }  from '../../../../mock/getData'
 import ListCompoent from '../../../components/ListComponent'
 import LoadMore from '../../../components/LoadMore'
-
+import {Link} from 'react-router';
 
 class List extends React.Component{
   constructor(props) {
@@ -15,7 +15,7 @@ class List extends React.Component{
             data: [],
             hasMore: false,
             isLoadingMore: false,
-            page: 1
+            page: 0
         }
   }
   render(){
@@ -38,57 +38,28 @@ class List extends React.Component{
   }
   
   componentDidMount(){
-    this.getData();
-    // console.log(ListData)
-    }
-  
-
-  async getData(){
-    try {
-      const res = await get(`/api/homelist/${this.props.cityName}/0`);
-      const data = await res.json();
-       console.log(data)
-      this.handleData(data);
-    } catch (error) {
-      // 发生错误
-      if (__DEV__) {
-          console.error('首列表获取数据报错, ', error.message)
-      }
-    }
+    this.resultHandle(homeListData())
   }
-
-  async loadMore() {
-    this.setState({
-      loadding: true
-    });
-    try {
-      const res = await get(`/api/homelist/${this.props.cityName}/${this.state.page}`);
-      const data = await res.json();
-      this.handleData(data);
+  resultHandle(result){
+    result.then(res =>{
       this.setState({
-        loadding: false,
-        page: this.state.page+1
-      });
-    } catch (error) {
-      // 发生错误
-      if (__DEV__) {
-          console.error('加载更多报错, ', error.message)
-      }
-    }
+        data: res,
+        hasMore:true,
+      })
+    })
+  }
+  loadMoreData(){
+    this.setState({
+			isLoadingMore:true
+		})
+    const page =this.state.page;
+    this.resultHandle(homeListData())
+    this.setState({
+      page:page+1
+    })
   }
 
-  handleData(data){
-    let hasMore = data.hasMore;
-    // console.log(hasMore)
-    // console.log(data.data)
-    // data = [...this.state.data,...data.data];
-    this.setState({
-      data:this.state.data.concat(data.data),
-      hasMore
-    });
-    console.log('1111')
-    console.log(this.state)
-  }
+  
 
 }
 export default List

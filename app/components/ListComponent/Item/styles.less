@@ -1,55 +1,68 @@
-.listItem {
-  width: 100%;
-  padding: 10px 0;
-  border-bottom: 1px solid #f1f1f1;
-
-  .itemImgContainer {
-      width: 120px;
-      height: 90px;
-
-      img {
-          width: 100%;
-          height: 100%;
-      }
-  }
-
-  .itemContent {
-      margin-left: 100px;
-      padding-left: 30px;
-      margin-top: 5px;
-      .itemTitleContainer {
-          height: 25px;
-
-          h3 {
-              font-size: 18px;
-              line-height: 1;
-              color: #333;
-          }
-          span {
-              font-size: 13px;
-              line-height: 18px;
-              color: #999;
-          }
-      }
-      .itemSubTitle {
-          font-size: 14px;
-          color: #666;
-          line-height: 1.5;
-      }
-      .itemPriceContainer {
-          margin-top: 10px;
-
-          .price {
-              font-size: 18px;
-              line-height: 1;
-              font-weight: 900;
-              color: rgb(233, 32, 61);
-          }
-          .mumber {
-              font-size: 13px;
-              line-height: 18px;
-              color: #999;
-          }
-      }
-  }
+.list-item {
+    // border-top:1px solid grey;
+    padding-top:10px; 
+}
+.item-img-conatiner{
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+}
+.item-title-container {
+    display: inline-block;
+    margin-top:10px; 
+    h3{
+        margin-left:2px; 
+        display: inline;
+        font-size:1.2rem;
+        font-weight: 700;
+    }
+    .brand {
+        background-color: #ffd930;
+        color:#52250a;
+    }
+    .baopiaozhun>span{
+        display: inline-block;
+        margin-left:2.1px;
+        padding-right:0px;  
+        border:0.3px solid rgb(221, 221, 221);
+        color: rgb(153, 153, 153);
+        // margin-right:0; 
+        // float:right; 
+    }
+}
+.item-sub-title{
+    margin-top:10px; 
+    font-size: 0.5rem;
+    .pingjia{
+            color:#ffaa0c;
+            margin-right: 10px;    
+    }
+    .kuaidi{
+        margin-left:20px;
+        .zhunshida{
+            margin-left:5px;
+            color:#2395ff;
+            border:1px solid  #2395ff
+        }
+        .fengniao {
+            margin-left: 5px;
+            color:#ffffff;
+            background-color: #2395ff
+        }
+    }
+}
+.item-price-container{
+    margin-top:10px; 
+    font-size:0.5rem;
+    span{
+        color:rgb(153, 153, 153)
+    }
+    .distance{
+        margin-left: 10px;
+    }
+    .time{
+        color:#2395ff;
+        margin-right: 0px;
+    }
 }

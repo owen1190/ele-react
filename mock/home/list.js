@@ -1,6 +1,6 @@
-module.exports = {
-    hasMore: true,
-    data: [
+
+    
+export const  data = [
       {
         img:"http://fuss10.elemecdn.com/4/a9/26d430f10aa25e9689b7fa42edf4bpng.png?imageMogr/format/webp/thumbnail/!120x120r/gravity/Center/crop/120x120/",
         brand: true,
@@ -70,7 +70,7 @@ module.exports = {
         distance:'2.72',
         time:'49'
       },
-    ]}
+    ]
 
 //   module.exports = router => {
 //   router.get('/api/users/:id', function *(next) {

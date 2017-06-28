@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import HomeHeader from '../../components/HomeHeader';
 import Category from '../../components/Category';
-
+import './styles.less'
 import List from './subPage/List';
 
 class Home extends Component{

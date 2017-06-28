@@ -2,7 +2,7 @@ const Koa = require('koa'),
   Router = require('koa-router');
 
 const app = new Koa(),
-  router = new Router;
+  router = new Router();
   // router = require('./home/index');
 
 
@@ -12,7 +12,7 @@ const app = new Koa(),
 const homeListData = require('./home/list.js')
 router.get('/api/homelist/:city/:page', function *(next) {
     // 参数
-    const params = ctx.params;
+    const params = this.params;
     const paramsCity = params.city;
     const paramsPage = params.page;
 

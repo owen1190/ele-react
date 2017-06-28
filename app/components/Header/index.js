@@ -15,11 +15,17 @@ class Header extends React.Component {
                     <i className="fa fa-chevron-left"></i>
                 </span>
                 <h1>{this.props.title}</h1>
+                <div className="inputLocation">
+                    <input type="text" placeholder="请输入地址" onChange={this.submitHandle.bind(this)}/>
+                </div>
             </div>
         )
     }
     clickHandle() {
         this.props.handleBack();
+    }
+    submitHandle(){
+        this.props.handleSubmit();
     }
 }
 
