@@ -36,7 +36,7 @@ class App extends Component{
     let cityName = '';
     cityName = localStore.getItem(CITYNAME);
     if(cityName == null){
-      cityName = '北京';
+      cityName = '沈阳';
     }
 
     //将数据存入redux
