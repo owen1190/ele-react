@@ -7,6 +7,8 @@ import Header from '../../components/Header';
 import {cityData} from '../../../mock/getData'
 import localStore from '../../until/localStore';
 import {CITYNAME} from '../../config/localSotre.config';
+
+import './style.less'
 class City extends Component{
   constructor(props, context){
     super(props, context);
@@ -15,38 +17,45 @@ class City extends Component{
       datalist:[]
     }
   }
-  handleBack(){
+  handleBack(){//回退功能
     this.props.history.goBack();
   }
-  cityListClick(cityName){
+  cityListClick(cityName){//点击选择地址
     localStore.setItem(CITYNAME, cityName);
     this.props.updateCityName(cityName);
+    this.handleBack();
   }
   handleSubmit(e){
-    // e.preventDefault();
-    cityData().then(res=>{
-      console.log(res)
-      this.setState({
-        datalist:res
-      })
-    })
-
-    
+      if(e.keyCode==13){//监听回车事件
+        cityData().then(res => {
+          this.setState({
+            datalist:res
+          })          
+        })
+      e.target.value="";  
+      }
   }
   render(){
     return (
       <div>
-        <Header title='选择地址' handleBack={this.handleBack.bind(this)} handleSubmit={this.handleSubmit.bind(this)}/>
+        <div className="city-header">
+          <Header title='选择地址' handleBack={this.handleBack.bind(this)} />
+          <div className="inputLocation">
+              <input type="text" placeholder="请输入地址" onKeyDown={this.handleSubmit.bind(this)}/>
+          </div> 
+        </div>
         <div className='container'>       
-        <ul className="clear-fix" onClick={this.cityListClick.bind(this)}>
-          {this.state.datalist.map((data,index)=>{
-            <li index={index}>
-              <h4 className="title">{data.name}</h4>
-              <span className="subTitle">{data.address}</span>
-            </li>
-          })}
-        </ul>
-      </div>
+          <ul>
+            {this.state.datalist.map((data,index)=>{
+              return (
+                <li key={index} onClick={this.cityListClick.bind(this,data.name)}>
+                  <h4 className="title">{data.name}</h4>
+                  <p className="subTitle">{data.address}</p>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     );
   }
