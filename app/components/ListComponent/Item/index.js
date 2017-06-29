@@ -48,8 +48,10 @@ class Item extends Component{
                         <span className="price ">￥{data.price}起送/</span>
                         <span className="cost">配送费￥{data.cost}/</span>
                         <span className="per">￥{data.per}/人</span>
-                        <span className="distance">{data.distance}km/</span>
-                        <span className="time">{data.time}分钟</span>
+                        <section className="right">
+                            <span className="distance">{data.distance}km/</span>
+                            <span className="time">{data.time}分钟</span>
+                        </section>
                     </div>
                 </div>
             </div>

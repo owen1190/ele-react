@@ -1,6 +1,8 @@
 .list-item {
     // border-top:1px solid grey;
-    padding-top:10px; 
+    padding-top:10px;
+    width: 100%;
+    border-bottom:1px solid #eee 
 }
 .item-img-conatiner{
     float: left;
@@ -9,7 +11,7 @@
     margin-right: 20px;
 }
 .item-title-container {
-    display: inline-block;
+    // display: inline-block;
     margin-top:10px; 
     h3{
         margin-left:2px; 
@@ -18,35 +20,37 @@
         font-weight: 700;
     }
     .brand {
+        margin-left: 3px;
         background-color: #ffd930;
         color:#52250a;
     }
-    .baopiaozhun>span{
-        display: inline-block;
-        margin-left:2.1px;
-        padding-right:0px;  
-        border:0.3px solid rgb(221, 221, 221);
-        color: rgb(153, 153, 153);
-        // margin-right:0; 
-        // float:right; 
+    .baopiaozhun{    
+        float:right;
+        span{
+            margin-left:1.2px;
+            margin-right:0px;  
+            border:0.3px solid rgb(221, 221, 221);
+            color: rgb(153, 153, 153);
+        } 
     }
 }
 .item-sub-title{
     margin-top:10px; 
     font-size: 0.5rem;
     .pingjia{
-            color:#ffaa0c;
-            margin-right: 10px;    
+        margin-left: 3px;
+        color:#ffaa0c;
+        margin-right: 10px;    
     }
     .kuaidi{
+        float:right;
         margin-left:20px;
         .zhunshida{
-            margin-left:5px;
+            margin-right:5px;
             color:#2395ff;
             border:1px solid  #2395ff
         }
         .fengniao {
-            margin-left: 5px;
             color:#ffffff;
             background-color: #2395ff
         }
@@ -56,13 +60,17 @@
     margin-top:10px; 
     font-size:0.5rem;
     span{
+        
         color:rgb(153, 153, 153)
     }
-    .distance{
-        margin-left: 10px;
-    }
-    .time{
-        color:#2395ff;
-        margin-right: 0px;
+    .right{
+        float:right;
+        .distance{
+            margin-right: 5px;
+        }
+        .time{
+            color:#2395ff;
+
+        }
     }
 }
