@@ -20,7 +20,8 @@ class Home extends Component{
           onSearchClick={() => {}}
           onCitySelectClick={() => {}}
         />
-        <Category/>              
+        <Category/>
+        <div className="jiange"></div>              
         <List cityName={this.props.cityName}/>
       </div>
     );
