@@ -7,6 +7,8 @@ import ListCompoent from '../../../components/ListComponent'
 import LoadMore from '../../../components/LoadMore'
 import {Link} from 'react-router';
 
+import './style.less'
+
 class List extends React.Component{
   constructor(props) {
         super(props);
@@ -52,7 +54,7 @@ class List extends React.Component{
     this.setState({
 			isLoadingMore:true
 		})
-    const page =this.state.page;
+    const page = this.state.page;
     this.resultHandle(homeListData())
     this.setState({
       page:page+1
