@@ -14,7 +14,7 @@ import City from '../containers/City';
 import NotFound from '../containers/404Page';
 import Login from '../containers/Login';
 import Profile from '../containers/Profile'
-
+import Shop from '../containers/Shop'
 
 import localStore from '../until/localStore';
 import {CITYNAME} from '../config/localSotre.config';
@@ -52,6 +52,7 @@ class App extends Component{
         <Route path='/city'  component={City}/>
         <Route path='/search/:geoHash'  component={Search}/>
         <Route path='/food'  component={Food}/>
+        <Route path='/shop'  component={Shop}/>
         <Route path='/msite'  component={posMsite}/>
         <Route path='/profile'  component={Profile}/>
         <Route path='/login'  component={Login}/>        
