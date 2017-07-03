@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import PureMixinRender from 'react-addons-pure-render-mixin';
 // import  './styles.less';
 import Item from './Item/index'
-
+import { Link } from 'react-router-dom'
 class ListComponent extends Component{
   
   constructor(props, context){
@@ -14,7 +14,11 @@ class ListComponent extends Component{
     return (
       <div >
       {this.props.data.map((item, index) => {
-        return <Item key={`list-${index}`} data={item} />
+        return (
+        <Link to={'/shop/:'+index} key={index}>
+          <Item  data={item} />
+        </Link>
+        )
       })}
       </div>
     );
