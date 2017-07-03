@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
-
+import './style.less'
 class Footer extends Component{
   render(){
-    renturn(
+    return(
       <div className="footer">
-        <section className="">外卖</section>
-        <section className="">搜索</section>
-        <section className="">订单</section>
-        <section className="">我的</section>
+        <section className="mistie">外卖</section>
+        <section className="search">搜索</section>
+        <section className="order">订单</section>
+        <section className="profile">我的</section>
       </div>   
     )
   }
