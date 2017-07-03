@@ -6,7 +6,7 @@ import HomeHeader from '../../components/HomeHeader';
 import Category from '../../components/Category';
 import './styles.less'
 import List from './subPage/List';
-
+import Footer from '../../components/Footer'
 class Home extends Component{
   constructor(props, context){
     super(props, context);
@@ -23,6 +23,7 @@ class Home extends Component{
         <Category/>
         <div className="jiange"></div>              
         <List cityName={this.props.cityName}/>
+        <Footer />
       </div>
     );
   }
