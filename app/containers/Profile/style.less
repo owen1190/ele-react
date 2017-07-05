@@ -1,0 +1,84 @@
+.profile{
+  .head{
+    position: relative;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    width: 100%;
+    justify-content: space-between;
+    color: #fff;
+    background-image: linear-gradient(90deg,#0af,#0085ff);
+    height: 3.2rem;
+    .head-icon{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i{
+        display: block;
+      }
+    }
+    .tittle{
+      position: absolute;
+      top: 0;
+      left:50%;
+      max-width: 50%;
+      font-weight: 700;
+      font-size: 1rem;
+      transform: translateX(-50%);
+      display: block;
+      // line-height: 3.2rem;
+    }
+  }
+    .userinfo{
+      background-image: linear-gradient(90deg,#0af,#0085ff);
+      display: flex;
+      color: #fff;
+      align-items: center;
+      padding: 1.66667rem 1.4rem;
+      img{
+        width: 100px;
+        height: 100px;
+      }
+      section{
+        flex-grow: 1;
+        display: block;
+        .username{
+          margin-left: 1.2rem;
+          display: block;
+          margin-bottom: 1.2rem;
+          font-weight: 700;
+        }
+        .phonenumber{
+          display: flex;
+          align-items: center;
+          font-weight: 700;
+        }
+      }
+      i{
+        color: #fff;
+
+      }
+  }
+  .myinfo{
+    display: table;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 4.24rem;
+    section{
+      border-right: 1px solid #ddd;
+      display: table-cell;
+      width: 33.333%;
+      vertical-align: middle;
+      text-align: center;
+      color:#666;
+      .favorable{
+        color: rgb(255, 95, 62)
+      }
+      .point{
+        color: rgb(106, 194, 11);
+      }
+      
+    }
+  }
+}

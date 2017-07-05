@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 
 
-
+import './style.less'
 class Profile extends Component{
   constructor(props) {
     super(props);
@@ -27,23 +27,22 @@ class Profile extends Component{
     return(
       <div className="profile">
         <div className="head">
-          <i className="fa fa-chevron-left"></i>
-          <span className="tittle">我的</span>
+          <div className="head-icon"><i className="fa fa-chevron-left"></i></div>
+          <h1 className="tittle">我的</h1>
         </div>
         <div className="userinfo">
           <img src="" alt=""/>
           <section>
-            <p>{username}</p>
-            <p><i className="fa fa-mobile"></i>{phonenumber}</p>
+            <p className="username">{username}</p>
+            <p className="phonenumber"><i className="fa fa-mobile"></i>{phonenumber}</p>
           </section>
           <section>
             <i className="fa fa-angle-right" /> 
           </section>
         </div>
         <div className="myinfo">
-          <div className="title">{balance}元<span className="subtitle">我的余额</span></div>
-          <div className="title">{favorable}个<span className="subtitle">我的优惠</span></div>
-          <div className="title">{point}分<span className="subtitle">我的积分</span></div>
+          <section ><span className="favorable">{favorable}</span >个优惠</section>
+          <section ><span className="point">{point}</span >分积分</section>
         </div>
         <div className="myorder"><i className="fa fa-book"></i>我的订单<i className="fa fa-angle-right"></i></div>
         <div className="mypoint"><i className="fa fa-shopping-bag"></i>积分商城<i className="fa fa-angle-right"></i></div>
