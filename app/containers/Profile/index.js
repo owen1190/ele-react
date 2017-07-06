@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-
+import {Link} from 'react-router-dom';
 
 
 import './style.less'
@@ -27,29 +27,30 @@ class Profile extends Component{
     return(
       <div className="profile">
         <div className="head">
-          <div className="head-icon"><i className="fa fa-chevron-left"></i></div>
+          <Link to="/"><div className="head-icon"><i className="fa fa-chevron-left"></i></div></Link>
           <h1 className="tittle">我的</h1>
         </div>
         <div className="userinfo">
           <img src="" alt=""/>
-          <section>
+          <div>
             <p className="username">{username}</p>
             <p className="phonenumber"><i className="fa fa-mobile"></i>{phonenumber}</p>
-          </section>
+          </div>
           <section>
             <i className="fa fa-angle-right" /> 
           </section>
         </div>
         <div className="myinfo">
-          <section ><span className="favorable">{favorable}</span >个优惠</section>
-          <section ><span className="point">{point}</span >分积分</section>
+          <section ><span className="favorable">{favorable}</span>个优惠</section>
+          <section ><span className="point">{point}</span>分积分</section>
         </div>
-        <div className="myorder"><i className="fa fa-book"></i>我的订单<i className="fa fa-angle-right"></i></div>
-        <div className="mypoint"><i className="fa fa-shopping-bag"></i>积分商城<i className="fa fa-angle-right"></i></div>
-        <div className="card"><i className=""></i>饿了么会员卡<i className="fa fa-angle-right"></i></div>
-        
-        <div className="service"><span></span>服务中心<i className="fa fa-angle-right"></i></div>
-        <div className="download"><span></span>下载饿了么APP<i className="fa fa-angle-right"></i></div>
+        <div className="jiange"/>
+        <section className="profile_s"><i className="fa fa-book left"></i><div>我的订单<i className="fa fa-angle-right right"></i></div></section>
+        <section className="profile_s"><i className="fa fa-shopping-bag left" ></i><div>积分商城<i className="fa fa-angle-right right"></i></div></section>
+        <section className="profile_s"><i className="fa fa-credit-card left"></i><div>饿了么会员卡<i className="fa fa-angle-right right"></i></div></section>
+        <div className="jiange"/>
+        <section className="profile_s"><i className="fa fa-book left"></i><div>服务中心<i className="fa fa-angle-right right"></i></div></section>
+        <section className="profile_s"><i className="fa fa-book left"></i><div>下载饿了么APP<i className="fa fa-angle-right right"></i></div></section>
       </div>    
     )
   }
