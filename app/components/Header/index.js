@@ -22,9 +22,7 @@ class Header extends React.Component {
     clickHandle() {
         this.props.handleBack();
     }
-    submitHandle(){
-        this.props.handleSubmit();
-    }
+
 }
 
 export default Header
