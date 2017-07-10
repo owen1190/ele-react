@@ -9,6 +9,7 @@ react、react-redux、webpack、react-router、less
 - [ ] 分类界面
 - [x] 用户界面
 - [ ] 搜索界面
+- [x] 登录界面
 
 ## License
 [MIT](LICENSE)
