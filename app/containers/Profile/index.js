@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router-dom';
-
+import Header from '../../components/Header'
 
 import './style.less'
 class Profile extends Component{
@@ -16,6 +16,9 @@ class Profile extends Component{
       point:0,
     }
   }
+  handleBack(){
+    this.props.histroy.back();
+  }
   render(){
     const username= this.state.username;//用户名
     const phonenumber= this.state.phonenumber;//手机号
@@ -26,10 +29,7 @@ class Profile extends Component{
 
     return(
       <div className="profile">
-        <div className="head">
-          <Link to="/"><div className="head-icon"><i className="fa fa-chevron-left"></i></div></Link>
-          <h1 className="tittle">我的</h1>
-        </div>
+        <Header title="我的" handleBack={this.handleBack.bind(this)}></Header>
         <div className="userinfo">
           <img src="" alt=""/>
           <div>
@@ -37,7 +37,9 @@ class Profile extends Component{
             <p className="phonenumber"><i className="fa fa-mobile"></i>{phonenumber}</p>
           </div>
           <section>
-            <i className="fa fa-angle-right" /> 
+            <Link to="/login">
+              <i className="fa fa-angle-right" />       
+            </Link>
           </section>
         </div>
         <div className="myinfo">
