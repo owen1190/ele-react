@@ -33,7 +33,9 @@ class HomeHeader extends Component{
           </div>
         </div>
         <div className="home-header-middle clear-fix">
-          <input type="text" placeholder="搜索商家、商品" />
+          <Link to='/search'>
+            <input type="text" placeholder="搜索商家、商品" onClick={this.props.onSearchClick.bind(this)}/>
+          </Link>
         </div>
         <div className="home-header-bottom">
           <ul>
