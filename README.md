@@ -8,7 +8,7 @@ react、react-redux、webpack、react-router、less
 - [ ] 商店界面
 - [ ] 分类界面
 - [x] 用户界面
-- [ ] 搜索界面
+- [x] 搜索界面
 - [x] 登录界面
 
 ## License
