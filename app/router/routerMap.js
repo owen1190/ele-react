@@ -15,6 +15,7 @@ import NotFound from '../containers/404Page';
 import Login from '../containers/Login';
 import Profile from '../containers/Profile'
 import Shop from '../containers/Shop'
+import Loading from '../components/Loading'
 
 import localStore from '../until/localStore';
 import {CITYNAME} from '../config/localSotre.config';
@@ -50,7 +51,7 @@ class App extends Component{
       <Switch>
         <Route path='/' exact component={Home}/>
         <Route path='/city'  component={City}/>
-        <Route path='/search/:geoHash'  component={Search}/>
+        <Route path='/search'  component={Search}/>
         <Route path='/food'  component={Food}/>
         <Route path='/shop'  component={Shop}/>
         <Route path='/msite'  component={posMsite}/>
@@ -62,10 +63,7 @@ class App extends Component{
     return (
       <Router>
         <div>
-          {/**
-           * 这里可以公共的样式,比如 头部, 尾部, 等.
-           */}
-          {this.state.initialDone ? Routes : (<div>加载中...</div>)}
+          {this.state.initialDone ? Routes : Loading}
         </div>
       </Router>
     );
