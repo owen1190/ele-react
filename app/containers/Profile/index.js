@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Link} from 'react-router-dom';
-import Header from '../../components/Header'
-
+import Header from '../../components/Header';
+import Footer from '../../components/Footer'
 import './style.less'
 class Profile extends Component{
   constructor(props) {
@@ -17,7 +17,7 @@ class Profile extends Component{
     }
   }
   handleBack(){
-    this.props.histroy.back();
+    this.props.history.go(-1);
   }
   render(){
     const username= this.state.username;//用户名
@@ -53,7 +53,8 @@ class Profile extends Component{
         <div className="jiange"/>
         <section className="profile_s"><i className="fa fa-book left"></i><div>服务中心<i className="fa fa-angle-right right"></i></div></section>
         <section className="profile_s"><i className="fa fa-book left"></i><div>下载饿了么APP<i className="fa fa-angle-right right"></i></div></section>
-      </div>    
+        <Footer />    
+      </div>
     )
   }
 }
